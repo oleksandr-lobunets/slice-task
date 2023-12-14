@@ -24,7 +24,6 @@ import static wiremock.org.hamcrest.collection.IsIterableContainingInAnyOrder.co
 @Testcontainers(disabledWithoutDocker = true)
 class AppControllerTest {
 
-
     @RegisterExtension
     static WireMockExtension wireMockServer = WireMockExtension.newInstance()
             .options(wireMockConfig().dynamicPort().usingFilesUnderClasspath("wiremock"))
@@ -41,7 +40,6 @@ class AppControllerTest {
         try (EmbeddedServer server = ApplicationContext.run(EmbeddedServer.class, getProperties())) {
             RestAssured.port = server.getPort();
 
-
             var response = """
                     {"items":[{"name":"README.md","url":"%s/repositories/383922649/contents/README.md"},{"name":"README.md","url":"%s/repositories/385832397/contents/README.md"}]}
                     """
@@ -52,7 +50,6 @@ class AppControllerTest {
                             .withHeader("Content-Type", "application/json")
                             .withBody(response)));
 
-
             HashMap<String, Long> map = given().contentType(ContentType.JSON)
                     .when()
                     .get("api/v1/statistics/{userName}", userName)
@@ -61,7 +58,6 @@ class AppControllerTest {
                     .extract().body().as(HashMap.class);
 
             assertThat(map.keySet(), containsInAnyOrder("opendatadiscovery", "https", "github"));
-
         }
     }
 }
