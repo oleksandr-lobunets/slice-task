@@ -8,11 +8,11 @@ import reactor.core.publisher.Mono;
 import java.util.LinkedHashMap;
 
 @Prototype
-public class GitHubService implements WordService {
+public class WordServiceImpl implements WordService {
 
     private final GithubClient githubClient;
 
-    public GitHubService(GithubClient githubClient) {
+    public WordServiceImpl(GithubClient githubClient) {
         this.githubClient = githubClient;
     }
 

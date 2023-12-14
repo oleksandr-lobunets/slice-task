@@ -29,7 +29,8 @@ import static io.micronaut.http.HttpHeaders.USER_AGENT;
 @Prototype
 public class GithubClient {
 
-    private static final String GIT_HUB_URL = "https://api.github.com";
+    @Value("${github.url}")
+    private String githubUrl;
     private final HttpClient httpClient;
 
 
@@ -45,7 +46,7 @@ public class GithubClient {
     }
 
     public Mono<LinkedHashMap<String, Long>> getListRepositories(final String username) {
-        URI uri = UriBuilder.of(GIT_HUB_URL)
+        URI uri = UriBuilder.of(githubUrl)
                 .path("search")
                 .path("code")
                 .queryParam("q", "user:%s filename:%s".formatted(username, filename))

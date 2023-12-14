@@ -1,0 +1,30 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/repositories/383922649/contents/README.md"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "readme.json"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/repositories/385832397/contents/README.md"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "readme.json"
+      }
+    }
+  ]
+}

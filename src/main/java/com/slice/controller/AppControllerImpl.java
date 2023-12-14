@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 import java.util.LinkedHashMap;
 
 
-public interface WebController {
+public interface AppControllerImpl {
 
     Mono<LinkedHashMap<String, Long>> getWordsCount(@PathVariable String userName);
 }
