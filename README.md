@@ -11,7 +11,7 @@ The application can be CLI or a simple web service, wrapping it to the docker co
 ```
 
 ## Preparation
-Specify an own GitHub token in application.properties file (parameter **github.token**)
+Specify an own GitHub token in application.properties file (property **github.token**)
 
 ## How to use
 Make HTTP GET request to **http://localhost:8080/api/v1/statistics/<user_name>**
